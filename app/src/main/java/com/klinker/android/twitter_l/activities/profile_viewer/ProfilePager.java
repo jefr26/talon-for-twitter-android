@@ -98,8 +98,8 @@ import xyz.klinker.android.drag_dismiss.delegate.DragDismissDelegate;
 
 public class ProfilePager extends WhiteToolbarActivity implements DragDismissDelegate.Callback {
 
-    private static final int NUM_TWEETS_ON_TIMELINE = 15;
-    private static final int LOAD_CAPACITY_PER_LIST = 20;
+    private static final int NUM_TWEETS_ON_TIMELINE = 75;
+    private static final int LOAD_CAPACITY_PER_LIST = 75;
 
     public static void start(Context context, User user) {
         try {
@@ -116,7 +116,7 @@ public class ProfilePager extends WhiteToolbarActivity implements DragDismissDel
     public static void start(Context context, String name, String screenName, String profilePic) {
         Intent intent = new Intent(context, ProfilePager.class);
 
-        DragDismissIntentBuilder.Theme theme = DragDismissIntentBuilder.Theme.LIGHT;
+        DragDismissIntentBuilder.Theme theme = DragDismissIntentBuilder.Theme.SYSTEM_DEFAULT;
         AppSettings settings = AppSettings.getInstance(context);
         if (settings.blackTheme) {
             theme = DragDismissIntentBuilder.Theme.BLACK;

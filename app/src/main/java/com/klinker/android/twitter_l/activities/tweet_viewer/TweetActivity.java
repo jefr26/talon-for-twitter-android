@@ -86,7 +86,7 @@ public class TweetActivity extends PeekViewActivity implements DragDismissDelega
         } catch (Exception e) {
             retweeter = "";
         }
-        String link = "";
+        String link;
 
         boolean hasGif = gifUrl != null && !gifUrl.isEmpty();
         boolean displayPic = !picUrl.equals("") && !picUrl.contains("youtube");

@@ -71,7 +71,8 @@ public class VideoViewerActivity extends DragDismissActivity {
 
             if (otherLinks.length > 0 && !otherLinks[0].equals("")) {
                 for (String s : otherLinks) {
-                    if (s.contains("youtu") && (gifVideo == null || gifVideo.isEmpty() || gifVideo.equals("no gif surfaceView"))) {
+                    // if (s.contains("youtu") && (gifVideo == null || gifVideo.isEmpty() || gifVideo.equals("no gif surfaceView"))) {
+                    if (s.contains("youtu")) {
                         video = s;
                         break;
                     }
@@ -102,8 +103,8 @@ public class VideoViewerActivity extends DragDismissActivity {
             viewVideo.putExtra("tweet_id", tweetId);
 
             new DragDismissIntentBuilder(context)
-                    .setDragElasticity(DragDismissIntentBuilder.DragElasticity.LARGE)
-                    .setPrimaryColorResource(android.R.color.black)
+                    .setDragElasticity(DragDismissIntentBuilder.DragElasticity.NORMAL)
+                    .setPrimaryColorResource(android.R.color.darker_gray)
                     .setShouldScrollToolbar(false)
                     .setFullscreenOnTablets(true)
                     .setShowToolbar(false)
@@ -154,7 +155,7 @@ public class VideoViewerActivity extends DragDismissActivity {
             public void run() {
                 IS_RUNNING = false;
             }
-        }, 3000);
+        }, 1000);
 
         bottomSheet = (BottomSheetLayout) root.findViewById(R.id.bottomsheet);
 
